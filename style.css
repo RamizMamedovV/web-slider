@@ -7,6 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 60vh;
+    background: #dbb3b3;
 }
 
 .slides_box {
@@ -22,9 +23,14 @@ body {
     flex-direction: row;
 }
 
+img {
+    width: 100%;
+    height: auto;
+}
+
 .slide {
     min-width: 100%;
-    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .dots {
