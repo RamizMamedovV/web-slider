@@ -1,1 +1,8 @@
 *.png
+*.txt
+*.json
+img/
+deepSeekExample/
+copilotExample/
+.vscode/
+node_modules/

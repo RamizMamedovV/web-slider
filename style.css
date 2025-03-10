@@ -1,0 +1,51 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+}
+
+.slides_box {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    flex-direction: row;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.active {
+    background-color: #2f2b2b;
+}
+.prev, .next {
+    cursor: pointer;
+    font-size: large;
+}
+
+.dot {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    margin: 0 2px;
+    border-radius: 50%;
+}

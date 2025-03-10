@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="slides_box">
+        <div class="slides">
+            <div class="slide"><img src="./img/1kredit0824.png" alt="foto1"></div>
+            <div class="slide"><img src="./img/AmimA.png" alt="foto2"></div>
+            <div class="slide"><img src="./img/fonts_img.png" alt="foto3"></div>
+        </div>
+        <div class="dots">
+            <button class="prev">«</button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+            <button class="dot"></button>
+            <button class="next">»</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const totalDots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = document.querySelectorAll('.slide').length;
+            const btn = document.querySelector('.dots');
+
+            if (index >= totalSlides) {
+                currentSlide = 0;
+            } else if (index < 0) {
+                currentSlide = totalSlides - 1;
+            } else {
+                currentSlide = index;
+            }
+
+            const offset = -currentSlide * 100;
+            slides.style.transform = `translateX(${offset}%)`;
+            totalDots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+
+
+        }
+
+        const btn = document.querySelector('.dots');
+
+        btn.addEventListener('click', function (e) {
+            const target = e.target;
+            if (target.classList.contains('prev')) {
+                showSlide(currentSlide - 1);
+            } else if (target.classList.contains('next')) {
+                showSlide(currentSlide + 1);
+            } else if (target.classList.contains('dot')) {
+                let num = Array.from(totalDots).indexOf(target);
+                showSlide(num);
+            }
+        });
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        function prevSlide() {
+            showSlide(currentSlide - 1);
+        }
+
+    </script>
+
+</body>
+
+</html>
